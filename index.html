@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #home {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        background-color: #fff;
+        color: #000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10%;
+        height: 10%;
+      }
+
+      .logo h2 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        width: 25%;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .nav-links li a:hover {
+        color: #8c8c8c;
+      }
+
+      .main-text {
+        margin: 0 10%;
+        text-align: left;
+      }
+
+      h1 {
+        font-size: 4em;
+        margin: 0;
+      }
+
+      .rotate {
+        animation: rotate 1s linear infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .sub-text {
+        font-size: 1.5em;
+        margin: 0;
+        margin-bottom: 20px;
+      }
+
+      .btn-group {
+        display: flex;
+      }
+
+      #dark-mode {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+
+      .scroll-down {
+        font-size: 1.5em;
+        margin: 0;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+      }
+
+      .scroll-down:hover {
+        color: #8c8c8c;
+      }
+      #about {
+        padding: 100px 0;
+        background-color: #f7f7f7;
+        color: #000;
+      }
+
+      .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .about-container h2 {
+        font-size: 3em;
+        margin-bottom: 50px;
+      }
+
+      .about-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .about-img {
+        width: 50%;
+      }
+
+      .about-img img {
+        max-width: 100%;
+      }
+
+      .about-text {
+        width: 50%;
+        padding: 0 50px;
+      }
+
+      .about-text p {
+        font-size: 1.5em;
+        line-height: 1.5;
+      }
+
+      .about-text a {
+        color: #000;
+        text-decoration: underline;
+      }
+
+      .about-text a:hover {
+        color: #8c8c8c;
+      }
+      #active-mind {
+        padding: 50px 0;
+        background-color: #fff;
+        color: #000;
+      }
+
+      .active-mind-container {
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .scrolling-text {
+        animation: scrolling 10s linear infinite;
+      }
+
+      @keyframes scrolling {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      #work {
+        padding: 100px 0;
+        background-color: #f7f7f7;
+        color: #000;
+      }
+
+      .work-container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .work-container h2 {
+        font-size: 3em;
+        margin-bottom: 50px;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px;
+      }
+
+      .card {
+        background-color: #fff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .tags {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #eee;
+      }
+
+      .tags span {
+        font-size: 1.2em;
+        color: #000;
+        font-weight: bold;
+      }
+
+      .card-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .card-img img {
+        max-width: 100%;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-content h3 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .card-content p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .btn-container a {
+        background-color: #000;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1.2em;
+        text-decoration: none;
+      }
+
+      .btn-container a:hover {
+        background-color: #8c8c8c;
+      }
+      #where-ive-been {
+        padding: 50px 0;
+      }
+
+      #where-ive-been h2 {
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      #where-ive-been table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      #where-ive-been table th,
+      #where-ive-been table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+      }
+
+      #where-ive-been table th {
+        background-color: #f2f2f2;
+      }
+
+      /* Styling for seventh section */
+      #contact {
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      #contact h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      #contact p {
+        font-size: 1.2em;
+      }
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #f8f8f8;
+        font-size: 14px;
+        color: #999;
+      }
+
+      .footer-links a {
+        margin-right: 20px;
+        color: #999;
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        color: #333;
+      }
+
+      .footer-text {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="home">
+      <nav>
+        <div class="logo">
+          <h2>Bruno Justa</h2>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about">About me</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="main-text">
+        <h1>Hello, I'm Bruno Justa<span class="rotate">*</span></h1>
+        <p class="sub-text">
+          *Actually, I'm a website, but I was built by Bruno Justa
+        </p>
+        <div class="btn-group">
+          <button id="dark-mode">Switch to Dark Mode</button>
+        </div>
+        <p class="scroll-down">Scroll Down</p>
+      </div>
+    </section>
+    <section id="about">
+      <div class="about-container">
+        <h2>UX/UI Designer</h2>
+        <div class="about-content">
+          <div class="about-img">
+            <img src="path/to/image.jpg" alt="Image description" />
+          </div>
+          <div class="about-text">
+            <p>
+              Digital arts lover, full time dreamer, I'm a UX/UI designer, web
+              developer amateur artist and cinema lover based in Porto. I love
+              to think outside the box and find creative solutions for all my
+              projects. I also love to make digital illustrations, especially I
+              like to create my own <a href="pokemon.html">Pokémon</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="active-mind">
+      <div class="active-mind-container">
+        <p class="scrolling-text">Active Mind - Creative Mind</p>
+      </div>
+    </section>
+    <section id="work">
+      <div class="work-container">
+        <h2>What I've Created</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="tags">
+              <span>UI/UX</span>
+              <span>Development</span>
+            </div>
+            <div class="card-img">
+              <img src="path/to/image.jpg" alt="Image description" />
+            </div>
+            <div class="card-content">
+              <div class="card-header">
+                <h3>Project Title</h3>
+                <p>JS-FIGMA-VUE</p>
+              </div>
+              <p>
+                Another paragraph describing the project underneath the first
+                one. Nam feugiat luctus sapien, vitae bibendum orci. In ac
+                sagittis nisi, vel tristique risus. Vestibulum vitae dui vel
+                massa vehicula facilisis vel vitae magna.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tags">
+              <span>UI/UX</span>
+              <span>Development</span>
+            </div>
+            <div class="card-img">
+              <img src="path/to/image.jpg" alt="Image description" />
+            </div>
+            <div class="card-content">
+              <div class="card-header">
+                <h3>Project Title</h3>
+                <p>JS-FIGMA-VUE</p>
+              </div>
+              <p>
+                Another paragraph describing the project underneath the first
+                one. Nam feugiat luctus sapien, vitae bibendum orci. In ac
+                sagittis nisi, vel tristique risus. Vestibulum vitae dui vel
+                massa vehicula facilisis vel vitae magna.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tags">
+              <span>UI/UX</span>
+              <span>Development</span>
+            </div>
+            <div class="card-img">
+              <img src="path/to/image.jpg" alt="Image description" />
+            </div>
+            <div class="card-content">
+              <div class="card-header">
+                <h3>Project Title</h3>
+                <p>JS-FIGMA-VUE</p>
+              </div>
+              <p>
+                Another paragraph describing the project underneath the first
+                one. Nam feugiat luctus sapien, vitae bibendum orci. In ac
+                sagittis nisi, vel tristique risus. Vestibulum vitae dui vel
+                massa vehicula facilisis vel vitae magna.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="btn-container">
+          <a
+            href="https://www.behance.net/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View More on Behance</a
+          >
+        </div>
+      </div>
+    </section>
+    <section id="active-mind">
+      <div class="active-mind-container">
+        <p class="scrolling-text">Active Mind - Creative Mind</p>
+      </div>
+    </section>
+    <section id="where-ive-been">
+      <h2>Where I've Been</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Entity</th>
+            <th>Type</th>
+            <th>What I Did</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2021</td>
+            <td>ABC Inc.</td>
+            <td>Internship</td>
+            <td>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique. Duis cursus,
+              mi quis viverra ornare.
+            </td>
+          </tr>
+          <tr>
+            <td>2020</td>
+            <td>XYZ Corp.</td>
+            <td>Freelance</td>
+            <td>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique. Duis cursus,
+              mi quis viverra ornare.
+            </td>
+          </tr>
+          <tr>
+            <td>2019</td>
+            <td>DEF Co.</td>
+            <td>Volunteer</td>
+            <td>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique. Duis cursus,
+              mi quis viverra ornare.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="contact">
+      <h2>Let's Get in <a href="mailto:brunomajusta@gmail.com">Touch</a></h2>
+    </section>
+    <footer>
+      <div class="footer-links">
+        <a href="#">Behance</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+      <div class="footer-text">
+        <p>@2023</p>
+      </div>
+    </footer>
+    <script>
+      const darkModeButton = document.getElementById("dark-mode");
+      const homeSection = document.getElementById("home");
+
+      darkModeButton.addEventListener("click", () => {
+        homeSection.classList.toggle("dark-mode");
+      });
+    </script>
+  </body>
+</html>
